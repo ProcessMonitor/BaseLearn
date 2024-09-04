@@ -37,7 +37,7 @@ public class CompletableFutureTest {
      * 链式异步操作
      */
     @Test
-    void LinkedAsyncOpration() {
+    void LinkedAsyncOperation() {
         String str = "hello world";
         CompletableFuture<Void> voidCompletableFuture = CompletableFuture.supplyAsync(() -> str.replace(" ", ""))
             .thenCombine(CompletableFuture.supplyAsync(() -> str.replaceAll("hello", ""))
