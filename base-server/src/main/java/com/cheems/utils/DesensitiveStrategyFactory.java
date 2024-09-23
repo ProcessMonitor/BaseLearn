@@ -17,6 +17,7 @@ public class DesensitiveStrategyFactory {
         strategyMap.put(DesensitiveType.NAME, new NameDesensitiveStrategy());
         strategyMap.put(DesensitiveType.ID_CARD, new IdCardDesensitiveStrategy());
         strategyMap.put(DesensitiveType.BANK_CARD, new BankCardDesensitiveStartegy());
+        strategyMap.put(DesensitiveType.DEFAULT, new NameDesensitiveStrategy());
     }
 
     public static DesensitiveStrategy getStrategy(DesensitiveType type) {
