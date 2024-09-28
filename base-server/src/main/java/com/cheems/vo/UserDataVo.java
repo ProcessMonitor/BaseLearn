@@ -1,6 +1,6 @@
 package com.cheems.vo;
 
-import com.cheems.config.Desensitive;
+import com.cheems.config.annotation.Desensitive;
 import com.cheems.entity.enums.DesensitiveType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

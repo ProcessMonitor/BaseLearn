@@ -1,7 +1,7 @@
 package com.cheems.utils;
 
 import com.cheems.api.DesensitiveStrategy;
-import com.cheems.config.Desensitive;
+import com.cheems.config.annotation.Desensitive;
 import com.cheems.entity.enums.DesensitiveType;
 
 import java.lang.reflect.Field;

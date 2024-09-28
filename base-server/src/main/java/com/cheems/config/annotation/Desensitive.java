@@ -1,4 +1,4 @@
-package com.cheems.config;
+package com.cheems.config.annotation;
 
 import com.cheems.entity.enums.DesensitiveType;
 
