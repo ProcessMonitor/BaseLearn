@@ -8,7 +8,6 @@ public enum DesensitiveType {
     BANK_CARD,
     ADDRESS,
     NAME,
-    DEFAULT;
-
-
+    DEFAULT,
+    DATE;
 }

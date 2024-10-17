@@ -1,6 +1,6 @@
 package com.cheems.vo;
 
-import com.cheems.config.annotation.Desensitive;
+import com.cheems.config.annotation.Desensitize;
 import com.cheems.entity.enums.DesensitiveType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,22 +13,22 @@ import lombok.NoArgsConstructor;
 @Builder
 public class UserDataVo {
 
-    @Desensitive(type = DesensitiveType.NAME)
+    @Desensitize(type = DesensitiveType.NAME)
     String name;
 
-    @Desensitive(type = DesensitiveType.ADDRESS)
+    @Desensitize(type = DesensitiveType.ADDRESS)
     String address;
 
-    @Desensitive(type = DesensitiveType.PHONE)
+    @Desensitize(type = DesensitiveType.PHONE)
     String phone;
 
-    @Desensitive(type = DesensitiveType.EMAIL)
+    @Desensitize(type = DesensitiveType.EMAIL)
     String email;
 
-    @Desensitive(type = DesensitiveType.ID_CARD)
+    @Desensitize(type = DesensitiveType.ID_CARD)
     String idCard;
 
-    @Desensitive(type = DesensitiveType.BANK_CARD)
+    @Desensitize(type = DesensitiveType.BANK_CARD)
     String bankCard;
 
 

@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)  // 作用于字段
 @Retention(RetentionPolicy.RUNTIME)  // 在运行时有效
-public @interface Desensitive {
+public @interface Desensitize {
     DesensitiveType type() default DesensitiveType.DEFAULT;  // 指定脱敏类型
 }
