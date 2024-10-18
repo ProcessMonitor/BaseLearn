@@ -11,14 +11,14 @@ public interface ResultClient {
      * @param requests {@link LisTestMainRequest}
      * @return
      */
-    @RequestMapping(value = "/jianyan/middle/result/receive", method = RequestMethod.POST)
-    Response<?> receiveLimsResult(@RequestBody List<LisTestMainRequest> requests);
+//    @RequestMapping(value = "/jianyan/middle/result/receive", method = RequestMethod.POST)
+//    Response<?> receiveLimsResult(@RequestBody List<LisTestMainRequest> requests);
 
     /**
      * 结果召回
      * @param request {@link CallbackResultRequest}
      * @return
      */
-    @RequestMapping(value = "/jianyan/middle/result/callback", method = RequestMethod.POST)
-    Response<?> callbackResult(@RequestBody CallbackResultRequest request);
+//    @RequestMapping(value = "/jianyan/middle/result/callback", method = RequestMethod.POST)
+//    Response<?> callbackResult(@RequestBody CallbackResultRequest request);
 }
