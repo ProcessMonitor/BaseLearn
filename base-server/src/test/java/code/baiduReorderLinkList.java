@@ -1,5 +1,6 @@
 package code;
 
+// 1234  ->  1423
 public class baiduReorderLinkList {
     class ListNode {
         int val;
