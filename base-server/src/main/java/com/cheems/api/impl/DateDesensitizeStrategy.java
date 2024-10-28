@@ -1,12 +1,12 @@
 package com.cheems.api.impl;
 
-import com.cheems.api.DesensitiveStrategy;
+import com.cheems.api.DesensitizeStrategy;
 import com.cheems.entity.enums.DesensitiveType;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateDesensitiveStartegy implements DesensitiveStrategy<Date> {
+public class DateDesensitizeStrategy implements DesensitizeStrategy<Date> {
     @Override
     public boolean isSupport(DesensitiveType target) {
         return false;

@@ -1,6 +1,6 @@
 package com.cheems.utils;
 
-import com.cheems.api.DesensitiveStrategy;
+import com.cheems.api.DesensitizeStrategy;
 import com.cheems.config.annotation.Desensitize;
 import com.cheems.entity.enums.DesensitiveType;
 
@@ -28,7 +28,7 @@ public class DeSensitiveUtil {
                 DesensitiveType type = annotation.type();
 
                 // 获取脱敏策略
-                DesensitiveStrategy<?> strategy = DesensitiveStrategyFactory.getStrategy(type);
+                DesensitizeStrategy<?> strategy = DesensitiveStrategyFactory.getStrategy(type);
 
                 field.setAccessible(true);  // 确保可以访问私有字段
                 Object value = field.get(obj);  // 获取字段的值
@@ -43,7 +43,7 @@ public class DeSensitiveUtil {
     }
 
     // 泛型方法应用脱敏策略
-    private static <T> T applyDesensitization(DesensitiveStrategy<T> strategy, Object value) {
+    private static <T> T applyDesensitization(DesensitizeStrategy<T> strategy, Object value) {
         return strategy.desensitize((T) value);
     }
 

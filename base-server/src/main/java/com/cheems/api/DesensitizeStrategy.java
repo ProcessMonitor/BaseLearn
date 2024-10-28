@@ -2,7 +2,7 @@ package com.cheems.api;
 
 import com.cheems.entity.enums.DesensitiveType;
 
-public interface DesensitiveStrategy<T> {
+public interface DesensitizeStrategy<T> {
     // 判断是否为脱敏类型
     boolean isSupport(DesensitiveType target);
 

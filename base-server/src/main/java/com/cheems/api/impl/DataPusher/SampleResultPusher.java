@@ -12,7 +12,6 @@ import java.util.concurrent.CompletableFuture;
 public class SampleResultPusher implements DataPusher<LongHuaResultDto> {
     @Override
     public CompletableFuture<Response<String>> push(LongHuaResultDto data) {
-        return null;
-//        return CompletableFuture.supplyAsync(() -> httpSampleResult(data));
+        return CompletableFuture.supplyAsync(() -> httpSampleResult(data));
     }
 }

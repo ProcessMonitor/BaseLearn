@@ -1,9 +1,9 @@
 package com.cheems.api.impl;
 
-import com.cheems.api.DesensitiveStrategy;
+import com.cheems.api.DesensitizeStrategy;
 import com.cheems.entity.enums.DesensitiveType;
 
-public class BankCardDesensitiveStartegy implements DesensitiveStrategy<String> {
+public class BankCardDesensitizeStrategy implements DesensitizeStrategy<String> {
     @Override
     public boolean isSupport(DesensitiveType target) {
         return target.equals(DesensitiveType.BANK_CARD);
