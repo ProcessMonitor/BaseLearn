@@ -8,6 +8,7 @@
 <!--        <version></version>-->
 <!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
 <!--    </parent>-->
+
     <parent>
         <groupId>com.cheems</groupId>
         <artifactId>base-common</artifactId>

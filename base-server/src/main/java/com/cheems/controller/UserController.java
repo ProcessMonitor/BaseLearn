@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/test")
 public class UserController {
-    @SyncLog(taskName = "测试脱敏数据")
+    @SyncLog(taskName = "测试脱敏数据log")
     @PostMapping(value = "/deSensitiveData")
     public String deSensitiveData(UserDataVo userDataVo){
 
