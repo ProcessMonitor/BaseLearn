@@ -8,10 +8,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.concurrent.CompletableFuture;
 
+
 @Service
 public class SampleResultPusher implements DataPusher<LongHuaResultDto> {
     @Override
     public CompletableFuture<Response<String>> push(LongHuaResultDto data) {
-        return CompletableFuture.supplyAsync(() -> httpSampleResult(data));
+//        return CompletableFuture.supplyAsync(() -> httpSampleResult(data));
+        return null;
     }
 }

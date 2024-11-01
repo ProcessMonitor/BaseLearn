@@ -1,9 +1,8 @@
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -58,6 +57,8 @@ public class BilibiliFanFetcher {
        } catch (IOException e) {
            log.error("Error fetching UID for username: {}", username, e);
            throw new RuntimeException("Error fetching UID", e);
+       } catch (JSONException e) {
+           throw new RuntimeException(e);
        }
    }
 
@@ -82,6 +83,8 @@ public class BilibiliFanFetcher {
        } catch (IOException e) {
            log.error("Error fetching fans count for UID: {}", uid, e);
            throw new RuntimeException("Error fetching fans count", e);
+       } catch (JSONException e) {
+           throw new RuntimeException(e);
        }
    }
 }

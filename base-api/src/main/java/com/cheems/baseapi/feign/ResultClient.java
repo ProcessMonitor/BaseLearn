@@ -1,8 +1,5 @@
 package com.cheems.baseapi.feign;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 
 public interface ResultClient {

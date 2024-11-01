@@ -11,6 +11,7 @@ import java.util.concurrent.CompletableFuture;
 public class PdfFilePusher implements DataPusher<LongHuaPdfFilePushDto> {
     @Override
     public CompletableFuture<Response<String>> push(LongHuaPdfFilePushDto data) {
-        return CompletableFuture.supplyAsync(() -> httpPdfPusher(data));
+//        return CompletableFuture.supplyAsync(() -> httpPdfPusher(data));
+        return null;
     }
 }
