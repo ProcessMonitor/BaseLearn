@@ -33,7 +33,8 @@ public class DeSensitiveUtil {
                 field.setAccessible(true);  // 确保可以访问私有字段
                 Object value = field.get(obj);  // 获取字段的值
 
-                if (value != null) {
+                // 不符合脱敏策略的字段不脱敏 否则会 NullPointerException
+                if (value != null && strategy != null) {
                     Object desensitizedValue = applyDesensitization(strategy, value);
                     field.set(obj, desensitizedValue);  // 设置脱敏后的值
                 }

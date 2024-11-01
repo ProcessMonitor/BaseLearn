@@ -1,5 +1,6 @@
 package com.cheems.vo;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.cheems.config.annotation.Desensitize;
 import com.cheems.entity.enums.DesensitiveType;
 import lombok.AllArgsConstructor;
@@ -13,21 +14,20 @@ import lombok.NoArgsConstructor;
 @Builder
 public class UserDataVo {
 
+    @JSONField(name = "name")
     @Desensitize(type = DesensitiveType.NAME)
     String name;
 
-    @Desensitize(type = DesensitiveType.ADDRESS)
+    @JSONField(name = "address")
     String address;
 
-    @Desensitize(type = DesensitiveType.PHONE)
     String phone;
 
-    @Desensitize(type = DesensitiveType.EMAIL)
     String email;
 
-    @Desensitize(type = DesensitiveType.ID_CARD)
     String idCard;
 
+    @JSONField(name = "bankCard")
     @Desensitize(type = DesensitiveType.BANK_CARD)
     String bankCard;
 

@@ -1,26 +1,29 @@
 package com.cheems.controller;
 
 import com.cheems.log.SyncLog;
+import com.cheems.utils.DeSensitiveUtil;
 import com.cheems.vo.UserDataVo;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.swak.frame.dto.Response;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/test")
 public class UserController {
     @SyncLog(taskName = "测试脱敏数据log")
     @PostMapping(value = "/deSensitiveData")
-    public String deSensitiveData(UserDataVo userDataVo){
-
+    public Response<UserDataVo> deSensitiveData(@RequestBody UserDataVo userDataVo) {
         System.out.println(userDataVo);
-
-
-        return "userDataVo";
+        UserDataVo dataVo = userDataVo;
+        try {
+            dataVo = DeSensitiveUtil.desensitize(userDataVo);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(dataVo);
+        return Response.success(dataVo);
     }
     @GetMapping(value = "/hello")
-    public String sayHello(UserDataVo userDataVo){
+    public String sayHello(UserDataVo userDataVo) {
 
         System.out.println("hello");
 
