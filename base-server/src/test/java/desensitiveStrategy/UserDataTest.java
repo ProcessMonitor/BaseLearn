@@ -1,7 +1,7 @@
 package desensitiveStrategy;
 
-import com.cheems.utils.DeSensitiveUtil;
-import com.cheems.vo.UserDataVo;
+import com.cheems.baseserver.utils.DeSensitiveUtil;
+import com.cheems.baseserver.vo.UserDataVo;
 
 public class UserDataTest {
 

@@ -1,13 +1,11 @@
-package com.cheems.baseapi;
+package com.cheems.baseserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-//
+
 @SpringBootApplication
-public class BaseApiApplication {
-
+public class BaseServerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BaseApiApplication.class, args);
+        SpringApplication.run(BaseServerApplication.class, args);
     }
-
 }
