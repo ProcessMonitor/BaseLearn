@@ -28,7 +28,7 @@ public class DeSensitiveUtil {
                 DesensitiveType type = annotation.type();
 
                 // 获取脱敏策略
-                DesensitizeStrategy<?> strategy = DesensitiveStrategyFactory.getStrategy(type);
+                DesensitizeStrategy<?> strategy = DesensitizeStrategyFactory.getStrategy(type);
 
                 field.setAccessible(true);  // 确保可以访问私有字段
                 Object value = field.get(obj);  // 获取字段的值
