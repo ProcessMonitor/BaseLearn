@@ -13,14 +13,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class SyncLogAop {
 
-//    @Pointcut(value = "execution(* com.cheems.controller..*.*(..))")
+    //    @Pointcut(value = "execution(* com.cheems.controller..*.*(..))")
     @Pointcut(value = "@annotation(com.cheems.baseserver.log.SyncLog)")
     public void pointcut() {
     }
 
     @Around("pointcut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
-        log.info("进入切面 ====== ");
+        log.info("进入：" + joinPoint.getSignature().getName() + "方法的切面");
+        log.info("参数为：" +  joinPoint.getArgs());
+        log.info("AOP生成的代理对象：" + joinPoint.getThis());
+        log.info("被代理对象：" + joinPoint.getTarget() );
+        // 执行方法
         Object proceed = joinPoint.proceed((joinPoint.getArgs()));
         log.info("退出切面 ====== ");
         return proceed;
