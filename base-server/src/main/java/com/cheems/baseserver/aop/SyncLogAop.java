@@ -23,7 +23,7 @@ public class SyncLogAop {
         log.info("进入：" + joinPoint.getSignature().getName() + "方法的切面");
         log.info("参数为：" +  joinPoint.getArgs());
         log.info("AOP生成的代理对象：" + joinPoint.getThis());
-        log.info("被代理对象：" + joinPoint.getTarget() );
+        log.info("被代理对象：" + joinPoint.getTarget());
         // 执行方法
         Object proceed = joinPoint.proceed((joinPoint.getArgs()));
         log.info("退出切面 ====== ");
