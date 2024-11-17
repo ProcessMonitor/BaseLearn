@@ -1,3 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<configuration>-->
+<!--    &lt;!&ndash;不显示 Logback 默认的启动信息&ndash;&gt;-->
+<!--    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />-->
+
+<!--    <include resource="org/springframework/boot/logging/logback/defaults.xml" />-->
+<!--    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />-->
+
+<!--    <property name="LOG_PATH" value="${LOG_PATH:-logs}"/>-->
+<!--    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>-->
+
+<!--    <logger name="org.springframework.web" level="INFO"/>-->
+
+<!--    <springProfile name="prod">-->
+<!--        <appender name="dailyRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--            <File>${LOG_FILE}</File>-->
+<!--            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--                &lt;!&ndash; daily rollover &ndash;&gt;-->
+<!--                <FileNamePattern>${LOG_PATH}/%d{yyyy-MM-dd}.%i.log</FileNamePattern>-->
+
+<!--                <timeBasedFileNamingAndTriggeringPolicy-->
+<!--                        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+<!--                    &lt;!&ndash; or whenever the file size reaches 50MB &ndash;&gt;-->
+<!--                    <maxFileSize>5MB</maxFileSize>-->
+<!--                </timeBasedFileNamingAndTriggeringPolicy>-->
+
+<!--                &lt;!&ndash; keep 30 days' worth of history &ndash;&gt;-->
+<!--                <maxHistory>30</maxHistory>-->
+<!--            </rollingPolicy>-->
+
+<!--            <encoder>-->
+<!--                <Pattern>${FILE_LOG_PATTERN}</Pattern>-->
+<!--            </encoder>-->
+<!--        </appender>-->
+
+<!--        <appender name="minuteRollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--                &lt;!&ndash; rollover every minute &ndash;&gt;-->
+<!--                <FileNamePattern>${LOG_PATH}/minutes/%d{yyyyMMdd-HHmm}.log</FileNamePattern>-->
+<!--                &lt;!&ndash; keep 30 minutes' worth of history &ndash;&gt;-->
+<!--                <maxHistory>60</maxHistory>-->
+<!--            </rollingPolicy>-->
+
+<!--            <encoder>-->
+<!--                <Pattern>${FILE_LOG_PATTERN}</Pattern>-->
+<!--            </encoder>-->
+<!--        </appender>-->
+
+<!--        <logger name="{baseServer}" level="INFO"/>-->
+<!--        <logger name="org.springframework.data.mongodb.core.MongoTemplate" level="INFO"/>-->
+
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="CONSOLE" />-->
+<!--            <appender-ref ref="dailyRollingFileAppender"/>-->
+<!--            <appender-ref ref="minuteRollingFileAppender"/>-->
+<!--        </root>-->
+<!--    </springProfile>-->
+
+<!--    &lt;!&ndash;开发环境下仅显示到控制台&ndash;&gt;-->
+<!--    <springProfile name="dev,test">-->
+<!--        <logger name="{baseServer}" level="DEBUG"/>-->
+<!--        <logger name="org.springframework.data.mongodb.core.MongoTemplate" level="DEBUG"/>-->
+
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="CONSOLE" />-->
+<!--        </root>-->
+<!--    </springProfile>-->
+
+<!--</configuration>-->
 <configuration>
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <withJansi>true</withJansi>
