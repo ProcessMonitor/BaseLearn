@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class LambdaSystem {
+public class LambdaInterfaceT {
 
     @FunctionalInterface
     interface TwoElementReturnBoolean {

@@ -1,11 +1,13 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.*;
 
-public class LambdaCaseTest {
+public class FunctionalInterfaceT {
 
-    static List<Integer> myFilter(List<Integer> list, Predicate<Integer> predicate) {
+    @NotNull
+    static List<Integer> myFilter(@NotNull List<Integer> list, Predicate<Integer> predicate) {
         List<Integer> result = new ArrayList<>();
         for (Integer integer : list) {
             // 条件以后需要变
@@ -16,7 +18,8 @@ public class LambdaCaseTest {
         return result;
     }
 
-    static List<String> myMap(List<Integer> list, Function<Integer, String> function) {
+    @NotNull
+    static List<String> myMap(@NotNull List<Integer> list, Function<Integer, String> function) {
         List<String> result = new ArrayList<>();
         for (Integer number : list) {
             // 现在是数字转换为字符串  条件以后需要变
@@ -25,7 +28,7 @@ public class LambdaCaseTest {
         return result;
     }
 
-    static void myConsumer(List<Integer> list, Consumer<Integer> consumer) {
+    static void myConsumer(@NotNull List<Integer> list, Consumer<Integer> consumer) {
         //  这里不可以 new list 没有用  并且 consumer的返回值一般是 void
         for (Integer number : list) {
             // 现在是打印消费 消费规则以后需要变
@@ -33,6 +36,7 @@ public class LambdaCaseTest {
         }
     }
 
+    @NotNull
     static List<Integer> mySupplier(int count, Supplier<Integer> supplier) {
         List<Integer> result = new ArrayList<>();
         for (int i = 0; i < count; i++) {
@@ -41,7 +45,8 @@ public class LambdaCaseTest {
         }
         return result;
     }
-    static int myOperator(int a , int b  , IntBinaryOperator binaryOperator) {
+
+    static int myIntBinOperator(int a, int b, @NotNull IntBinaryOperator binaryOperator) {
         return binaryOperator.applyAsInt(a, b);
     }
 
@@ -55,10 +60,6 @@ public class LambdaCaseTest {
 //        System.out.println(oneElementInputTandReturnR.operate(-1.0));
 
         IntBinaryOperator binaryOperator = (int a, int b) -> Math.max(a, b);
-
-        System.out.println(myOperator(1, 2, binaryOperator));
-
-
-
+        System.out.println(myIntBinOperator(1, 2, binaryOperator));
     }
 }
