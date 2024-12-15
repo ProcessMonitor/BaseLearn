@@ -1,6 +1,7 @@
 package com.cheems.baseserver.entity;
 
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -24,8 +25,11 @@ public class Student {
 
     private String stuScore;
 
+
+    @TableField(exist = false)
     private String banji;
 
+    @TableField(exist = false)
     private Date createTime;
 
 }
