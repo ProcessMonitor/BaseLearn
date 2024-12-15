@@ -42,5 +42,15 @@ public class StudentTest {
 //        studentMapper.delete(QueryWrapper )
 
     }
+    @Test
+    public void testQueryWrapper() {
+        // query wrapper
+        QueryWrapper<Student> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("id", "stu_name")
+                .like("stu_name" , "四")
+                .ge("stu_age", 23);
+        List<Student> students = studentMapper.selectList(queryWrapper);
+        students.stream().forEach(System.out::println);
+    }
 
 }

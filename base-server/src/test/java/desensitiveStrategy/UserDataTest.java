@@ -7,7 +7,7 @@ public class UserDataTest {
 
     @org.junit.jupiter.api.Test
     void userDataDeSensitiveTest() throws IllegalAccessException {
-        UserDataVo user =    UserDataVo.builder().name("John Doe").bankCard("123456789012345678").idCard("123456789012345678").build();
+        UserDataVo user = UserDataVo.builder().name("John Doe").bankCard("123456789012345678").idCard("123456789012345678").build();
 
         System.out.println("Before desensitization: " + user);
 
