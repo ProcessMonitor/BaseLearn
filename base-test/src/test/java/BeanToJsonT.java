@@ -4,9 +4,9 @@ import org.springframework.beans.BeanUtils;
 
 public class BeanToJsonT {
     @Test
-    void BeanPropertiesTest(){
+    void BeanPropertiesTest() {
         MockDemoDto source = null;
         MockDemoDto target = null;
-        BeanUtils.copyProperties(source , target);
+        BeanUtils.copyProperties(source, target);
     }
 }
