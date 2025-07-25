@@ -1,7 +1,6 @@
 package mybatisPlusT;
 
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import com.cheems.baseserver.BaseServerApplication;
@@ -10,6 +9,7 @@ import com.cheems.baseserver.mapper.StudentMapper;
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.annotation.Cacheable;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -25,6 +25,7 @@ public class StudentTest {
 
 
     @Test
+    @Cacheable(value = "studentList", key = "'studentList'")
     public void testSelectStudentList() {
         System.out.println(studentMapper.selectStudentList());
     }
@@ -51,6 +52,17 @@ public class StudentTest {
                 .ge("stu_age", 23);
         List<Student> students = studentMapper.selectList(queryWrapper);
         students.stream().forEach(System.out::println);
+    }
+
+    @Test
+    public void testQueryWrapper() {
+        //QueryWrapper
+        List<Student> studentList = studentMapper.selectList(
+                new QueryWrapper<Student>()
+                        .like("stu_name", "四")
+                        .ge("stu_age", 23)
+        );
+        System.out.println(studentList);
     }
 
 }
