@@ -40,6 +40,25 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.cheems</groupId>
+            <artifactId>BaseLearn</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- RabbitMQ Java Client -->
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>5.18.0</version>
+        </dependency>
+
+        <!-- 如果使用Spring Boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+            <version>3.1.2</version>
+        </dependency>
     </dependencies>
 
     <build>
