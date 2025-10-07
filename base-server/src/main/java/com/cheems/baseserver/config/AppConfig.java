@@ -1,12 +1,13 @@
-package SpringSourceTestPkg;
+package com.cheems.baseserver.config;
 
+import com.cheems.baseserver.entity.User;
+import com.cheems.baseserver.service.UserService;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.Date;
 
-@Configuration
-public class ConfigurationDemo {
+public class AppConfig {
+    public static final String APP_NAME = "baseserver";
 
     //加载UserService
     @Bean

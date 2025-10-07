@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <beans xmlns="http://www.springframework.org/schema/beans"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.springframework.org/schema/beans
+                              http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!-- 启用注解扫描 -->
+    <bean id="User" class="com.cheems.baseserver.entity.User"  scope="prototype"/>
+    <bean id="userService" class="com.cheems.baseserver.service.UserService" parent="User"  />
+<!--    <context:component-scan base-package="com.example"/>-->
+
+<!--    &lt;!&ndash; 数据源配置 &ndash;&gt;-->
+<!--    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+<!--        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/your_database"/>-->
+<!--        <property name="username" value="your_username"/>-->
+<!--        <property name="password" value="your_password"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash; 事务管理器配置 &ndash;&gt;-->
+<!--    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash; 启用事务注解 &ndash;&gt;-->
+<!--    <tx:annotation-driven transaction-manager="transactionManager"/>-->
+
+    <!-- 其他Bean的定义 -->
+
+</beans>
