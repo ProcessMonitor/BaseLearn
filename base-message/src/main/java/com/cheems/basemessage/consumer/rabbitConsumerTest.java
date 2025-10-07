@@ -16,7 +16,7 @@ public class rabbitConsumerTest {
 
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("172.16.24.128");        // 或 "127.0.0.1"
+        factory.setHost("172.16.24.128");        // 宝塔面板mq
         factory.setPort(5672);               // RabbitMQ默认端口
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();

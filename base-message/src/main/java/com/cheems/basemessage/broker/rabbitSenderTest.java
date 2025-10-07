@@ -24,8 +24,11 @@ public static void main(String[] args) throws Exception {
 
         // 声明队列
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-
         String message = "Hello World!";
+
+        // 给message 加一个时间戳
+        message += " " + System.currentTimeMillis();
+
         channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
         System.out.println(" [x] Sent '" + message + "'");
 
