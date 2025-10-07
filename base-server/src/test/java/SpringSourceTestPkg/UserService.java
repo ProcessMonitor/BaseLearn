@@ -9,9 +9,10 @@ import javax.annotation.Resource;
 @Component
 public class UserService {
 
-    @Autowired
+    @Resource
     private User user;
 
+/*
     public void test()
     {
         System.out.println(a());
@@ -22,5 +23,6 @@ public class UserService {
     {
         return user;
     }
+*/
 
 }
